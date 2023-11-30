@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
+      - env:
+          REACT_APP_VISION_ENDPOINT: ${{ secrets.REACT_APP_VISION_ENDPOINT }}
+          REACT_APP_VISION_KEY: ${{ secrets.REACT_APP_VISION_KEY }}
       - uses: actions/checkout@v3
         with:
           submodules: true
